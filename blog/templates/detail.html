@@ -3,18 +3,20 @@
 <div>
     <table>
         <tr>
-            <th colspan="2">{{diaryPost.diary_title}}</th>
+            <th colspan="2">{{reviewPost.review_title}}</th>
         </tr>
         <tr>
-            <td>{{diaryPost.nickname}}</td>
-            <td>{{diaryPost.upload_date}}</td>
+            <td>{{reviewPost.nickname}}</td>
+            <td>{{reviewPost.upload_date}}</td>
+        </tr>
+        <tr>
+            <td colspan="2" id="movieTitle">{{reviewPost.movie}}</td>
         </tr>
         <tr> 
-            <td colspan="2" id="mainText">{{diaryPost.diary_body | linebreaks }}</td>
+            <td colspan="2" id="mainText">{{reviewPost.review_body | linebreaks }}</td>
         </tr>
     </table>
-    <a href="{%url 'edit' diaryPost.id%}" class="white_box">edit</a>
-    <a href="{%url 'delete' diaryPost.id%}" class="white_box">delete</a>
-    <a href="{%url 'home' %}" class="white_box">home</a>
+    <a href="{%url 'edit' reviewPost.id%}" class="white_box">edit</a>
+    <a href="{%url 'delete' reviewPost.id%}" class="white_box">delete</a>
 </div>
 {% endblock %}

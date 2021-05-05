@@ -8,35 +8,37 @@ def home(request):
     return render(request, 'home.html', {'allPost': allPost})
 
 def detail(request, id):
-    diaryPost = get_object_or_404(Blog, pk = id)
-    return render(request, 'detail.html', {'diaryPost':diaryPost})
+    reviewPost = get_object_or_404(Blog, pk = id)
+    return render(request, 'detail.html', {'reviewPost':reviewPost})
     
 def new(request):
     return render(request, 'new.html')
 
 def create(request):
-    new_diary = Blog()
-    new_diary.diary_title = request.POST['diary_title']
-    new_diary.nickname = request.POST['diary_writer']
-    new_diary.diary_body = request.POST['diary_body']
-    new_diary.upload_date = timezone.now()
-    new_diary.save()
-    return redirect('detail', new_diary.id)
+    new_review = Blog()
+    new_review.review_title = request.POST['review_title']
+    new_review.nickname = request.POST['review_writer']
+    new_review.movie = request.POST['movie']
+    new_review.review_body = request.POST['review_body']
+    new_review.upload_date = timezone.now()
+    new_review.save()
+    return redirect('detail', new_review.id)
 
 def edit(request, id):
-    edit_diary = Blog.objects.get(id = id)
-    return render(request, 'edit.html', {'diary':edit_diary})
+    edit_review = Blog.objects.get(id = id)
+    return render(request, 'edit.html', {'review':edit_review})
 
 def update(request, id):
-    update_diary = Blog.objects.get(id = id)
-    update_diary.diary_title = request.POST['diary_title']
-    update_diary.nickname = request.POST['diary_writer']
-    update_diary.diary_body = request.POST['diary_body']
-    update_diary.upload_date = timezone.now()
-    update_diary.save()
-    return redirect('detail', update_diary.id)
+    update_review = Blog.objects.get(id = id)
+    update_review.review_title = request.POST['review_title']
+    update_review.nickname = request.POST['review_writer']
+    update_review.movie = request.POST['movie']
+    update_review.review_body = request.POST['review_body']
+    update_review.upload_date = timezone.now()
+    update_review.save()
+    return redirect('detail', update_review.id)
 
 def delete(request, id):
-    delete_diary = Blog.objects.get(id = id)
-    delete_diary.delete()
+    delete_review = Blog.objects.get(id = id)
+    delete_review.delete()
     return redirect('home')

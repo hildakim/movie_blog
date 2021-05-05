@@ -1,17 +1,19 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<h1>Baking Diary</h1>
+<h1>Movie Blog</h1>
 
 <div>
     {% for post in allPost %}
     <table>
         <tr>
-            <th colspan="2">{{post.diary_title}}</th>
+            <th colspan="2">{{post.review_title}}</th>
         </tr>
         <tr>
-            <td>{{post.nickname}}</td>
-            <td>{{post.upload_date}}</td>
+            <td colspan="2">{{post.nickname}}</td>
+        </tr>
+        <tr>
+            <td colspan="2" id="movieTitle">{{post.movie}}</td>
         </tr>
         <tr> 
             <td colspan="2" id="mainText">{{post.summary}}<a href = "{%url 'detail' post.id %}">더보기</a></td>
@@ -19,9 +21,9 @@
     </table>
     {% endfor %}
 </div>
-<div>
-    <a href="{%url 'new'%}" class="white_box">write diary</a>
-</div>
+<!-- <div>
+    <a href="{%url 'new'%}" class="white_box">write movie review</a>
+</div> -->
 <br>
 <br>
 

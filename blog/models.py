@@ -3,13 +3,14 @@ from django.db import models
 # Create your models here.
 
 class Blog(models.Model):
-    diary_title = models.CharField(max_length=200)
+    review_title = models.CharField(max_length=200)
+    movie = models.CharField(max_length=100, null=True)
     nickname = models.CharField(max_length=100)
     upload_date = models.DateTimeField()
-    diary_body = models.TextField()
+    review_body = models.TextField()
 
     def __str__(self):
-        return self.diary_title 
+        return self.review_title 
 
     def summary(self):
-        return self.diary_body[:100]+'...'
+        return self.review_body[:100]+'...'
