@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block content %}
+<div>
+    <table>
+        <tr>
+            <th colspan="2">{{diaryPost.diary_title}}</th>
+        </tr>
+        <tr>
+            <td>{{diaryPost.nickname}}</td>
+            <td>{{diaryPost.upload_date}}</td>
+        </tr>
+        <tr> 
+            <td colspan="2" id="mainText">{{diaryPost.diary_body | linebreaks }}</td>
+        </tr>
+    </table>
+    <a href="{%url 'edit' diaryPost.id%}" class="white_box">edit</a>
+    <a href="{%url 'delete' diaryPost.id%}" class="white_box">delete</a>
+    <a href="{%url 'home' %}" class="white_box">home</a>
+</div>
+{% endblock %}
