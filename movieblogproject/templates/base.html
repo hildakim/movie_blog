@@ -17,9 +17,6 @@
             color: white;
             font-size: 70px;
             margin: 10px auto;
-            /* margin: 15 auto; */
-            /* text-shadow: 5px 5px 0px white; */
-            /* border: white 1px solid; */
             border-bottom: white 1px solid;
           }
           table{
@@ -28,7 +25,6 @@
             border: 2px black solid;
             width: 600px;
             background-color: white;
-            /* box-shadow: 5px 5px 0px black; */
           }
           th {
             font-family: 'Noto Sans KR', sans-serif;
@@ -39,7 +35,6 @@
           }
           tr, td, table{
             padding: 5px;
-            /* border: 2px black solid; */
           }
           #mainText {
             text-align: left;
@@ -47,7 +42,6 @@
           a.white_box {
             background-color: white;
             color:black;
-            /* box-shadow: 3px 3px 0px black; */
             text-decoration: none;
             font-family: 'Antonio', sans-serif;
             font-weight: bold;
@@ -61,7 +55,6 @@
             list-style-type: none;
             margin: 0;
             padding: 0;
-            /* justify-content: space-between; */
             align-items: center;
           }
           .nav-item {
@@ -72,9 +65,10 @@
           .nav-item a{
             text-align: center;
             text-decoration: none;
-            font-family: 'Antonio', sans-serif;
+            font-family: 'Faster One', cursive;
             color: black;
             font-weight: bold;
+            font-size: 30px;
           }
           #movieTitle{
             background-color: beige;
@@ -87,12 +81,6 @@
     <body>
         {% load static %}
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <!-- <div class="container-fluid">
-              <a class="navbar-brand" href="{% url 'home' %}">
-                <img src="{% static 'movie.png' %}" width="80" height="60">
-              </a>
-              <a class="nav-link active" aria-current="page" href="{% url 'new' %}">write</a>  
-            </div> -->
 
             <ul class="nav-container">
               <li class="nav-item">
@@ -103,12 +91,7 @@
               <li class="nav-item">
                 <a href="{% url 'new' %}">write</a>
               </li>
-              <!-- <li class="nav-item">
-                link
-              </li>
-              <li class='nav-item'>
-                hello
-              </li> -->
+        
             </ul>
 
         </nav>
