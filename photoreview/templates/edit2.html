@@ -8,22 +8,17 @@
     <table>
         <tr>
           <td><label for="title">제목</label></td>
-        </tr>
-        <tr>
           <td><input type="text" name="review_title" id="title" value="{{review.review_title}}"></td>
         </tr>
         <tr>
           <td><label for="movie">영화 제목</label></td>
-        </tr>
-        <tr>
           <td><input type="text" name="movie" id="movie" value="{{review.movie}}"></td>
         </tr>
         <tr>
           <td>별점</td>
+          <td><input type="number" value="{{review.rating}}" name="rating" min="0" max="5"></td>
         </tr>
-        <tr>
-          <td><input type="number" value="{{review.rating}}"></td>
-        </tr>
+        
     </table>
     <button type="submit"> submit </button>
 </form>

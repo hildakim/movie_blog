@@ -4,7 +4,7 @@
         <link href="https://fonts.googleapis.com/css2?family=Antonio:wght@400;700&family=Faster+One&family=Noto+Sans+KR:wght@400;700&display=swap" rel="stylesheet">
         <style>
           html, body{
-            background-color:black;
+            background-color:lightblue;
             width: 100%;
             margin: 0;
           }
@@ -14,7 +14,7 @@
           h1{
             text-align: center;
             font-family:'Faster One', cursive;
-            color: white;
+            color: rebeccapurple;
             font-size: 70px;
             margin: 10px auto;
             border-bottom: white 1px solid;
@@ -22,16 +22,18 @@
           table{
             text-align: center;
             margin: 20px auto;
-            border: 2px black solid;
-            width: 600px;
+            /* border: 2px black solid; */
+            min-width: 400px;
+            max-width: 650px;
             background-color: white;
           }
           th {
             font-family: 'Noto Sans KR', sans-serif;
-            font-size: 35px;
+            font-size: 20px;
           }
           td{
             font-family: 'Noto Sans KR', sans-serif;
+            text-align: center;
           }
           tr, td, table{
             padding: 5px;
@@ -47,7 +49,7 @@
             font-weight: bold;
             padding: 5px;
           }
-          .nav-container, .welcome-list {
+          .nav-container {
             display: flex;
             flex-direction: row;
             width: 100%;
@@ -57,24 +59,36 @@
             padding: 0;
             align-items: center;
           }
-          .nav-item, .welcome-item {
+          .nav-item {
             padding: 5px;
             padding-right: 15px;
-            cursor: pointer;
+            margin: 3px;
           }
-          .nav-item a, .welcome-item a{
+          .nav-item a{
             text-align: center;
             text-decoration: none;
-            font-family: 'Faster One', cursive;
-            color: black;
+            font-family: 'Antonio', cursive;
             font-weight: bold;
-            font-size: 30px;
+            font-size: 20px;
           }
           #movieTitle{
-            background-color: beige;
+            background-color: lightblue;
           }
           #title, #writer, #movie {
             width:80%;
+          }
+          .blog a{
+            color: rebeccapurple;
+          }
+          .photo a{
+            color:darkslateblue;
+          }
+          input, textarea {
+            width: 80%;
+            border: 2px lightblue solid;
+            border-radius: 15px;
+            padding: 5px;
+            background-color: lightblue;
           }
         </style>
     </head>
@@ -88,14 +102,17 @@
                   <img src="{% static 'movie.png' %}" width="70" height="60">
                 </a>
               </li>
-              <li class="nav-item">
+              <li class="nav-item blog">
+                <a href="{% url 'home' %}">Movie-Blog</a>
+              </li>
+              <li class="nav-item blog">
                 <a href="{% url 'new' %}">Blog write</a>
               </li>
-              <li class="nav-item">
-                <a href="{% url 'photoreview' %}">Photo Review</a>
+              <li class="nav-item photo">
+                <a href="{% url 'photoreview' %}">Photo-Review</a>
               </li>
-              <li class="nav-item">
-                <a href="{% url 'photoreview/new' %}">photoReview Write</a>
+              <li class="nav-item photo">
+                <a href="{% url 'photoreview/new' %}">Photo-Review Write</a>
               </li>
             </ul>
 

@@ -1,12 +1,58 @@
-{% extends 'base.html' %}
-{% block content %}
+<head>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Antonio:wght@400;700&family=Faster+One&family=Noto+Sans+KR:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    html, body{
+      background-color:lightblue;
+      width: 100%;
+      margin: 0;
+    }
+    div {
+      text-align: center;
+    }
+    h1{
+      text-align: center;
+      font-family:'Faster One', cursive;
+      color: rebeccapurple;
+      font-size: 70px;
+      margin: 10px auto;
+      border-bottom: white 1px solid;
+    }
+    .welcome-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .welcome-item a {
+      text-decoration: none;
+      font-family: 'Antonio', cursive;
+      color:rebeccapurple;
+      font-weight: 700;
+      font-size: 50px;
+    }
+    .welcome-item {
+      width: 300px;
+      height: 300px;
+      background-color: white;
+      margin: 15px;
+      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  </style>
+</head>
+
 <body>
   <h1>Welcome</h1>
 
-  <ul class="welcome-list">
-    <li class="welcome-item"><a href="{% url 'home' %}">MOVIE BLOG</a></li>
-    <li class="welcome-item"><a href="{% url 'photoreview' %}">PHOTO REVIEW</a></li>
-  </ul>
+  <div class="welcome-container">
+    <div class="welcome-item">
+      <a href="{% url 'home' %}">MOVIE BLOG</a>
+    </div>
+    <div class="welcome-item">
+      <a href="{% url 'photoreview' %}">PHOTO REVIEW</a>
+    </div>
+  </div>
 
 </body>
-{% endblock %}

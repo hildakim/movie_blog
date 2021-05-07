@@ -24,14 +24,6 @@ def create(request):
         new_review.save()
         return redirect('photoreview/detail', new_review.id)
     return redirect('photoreview')
-    # new_review = PhotoReview()
-    # new_review.review_title = request.POST['review_title']
-    # new_review.nickname = request.POST['review_writer']
-    # new_review.movie = request.POST['movie']
-    # new_review.review_body = request.POST['review_body']
-    # new_review.image = request.FILES['image']
-    # new_review.upload_date = timezone.now()
-    # new_review.save()
     
 
 def edit(request, id):
@@ -50,4 +42,4 @@ def update(request, id):
 def delete(request, id):
     delete_review = PhotoReview.objects.get(id = id)
     delete_review.delete()
-    return redirect('photoreview/home')
+    return redirect('photoreview')

@@ -3,31 +3,23 @@
 
 <h1>Update Your Movie Review</h1>
 
-<form action="{%url 'update' review.id %}" method="post">
+<form action="{%url 'update' review.id %}" method="post" enctype="multipart/form-data">
     {%csrf_token%}
     <table>
         <tr>
           <td><label for="title">제목</label></td>
-        </tr>
-        <tr>
           <td><input type="text" name="review_title" id="title" value="{{review.review_title}}"></td>
         </tr>
         <tr>
           <td><label for="writer">작성자</label></td>
-        </tr>
-        <tr>
           <td><input type="text" name="review_writer" id="writer" value="{{review.nickname}}"></td>
         </tr>
         <tr>
           <td><label for="movie">영화 제목</label></td>
-        </tr>
-        <tr>
           <td><input type="text" name="movie" id="movie" value="{{review.movie}}"></td>
         </tr>
         <tr>
           <td><label for="body">후기</label></td>
-        </tr>
-        <tr>
           <td><textarea name="review_body" id="body" cols="75" rows="10">{{review.review_body}}</textarea></td>
         </tr>
     </table>
