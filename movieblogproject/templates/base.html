@@ -47,7 +47,7 @@
             font-weight: bold;
             padding: 5px;
           }
-          .nav-container {
+          .nav-container, .welcome-list {
             display: flex;
             flex-direction: row;
             width: 100%;
@@ -57,12 +57,12 @@
             padding: 0;
             align-items: center;
           }
-          .nav-item {
+          .nav-item, .welcome-item {
             padding: 5px;
             padding-right: 15px;
             cursor: pointer;
           }
-          .nav-item a{
+          .nav-item a, .welcome-item a{
             text-align: center;
             text-decoration: none;
             font-family: 'Faster One', cursive;
@@ -89,9 +89,14 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="{% url 'new' %}">write</a>
+                <a href="{% url 'new' %}">Blog write</a>
               </li>
-        
+              <li class="nav-item">
+                <a href="{% url 'photoreview' %}">Photo Review</a>
+              </li>
+              <li class="nav-item">
+                <a href="{% url 'photoreview/new' %}">photoReview Write</a>
+              </li>
             </ul>
 
         </nav>

@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block content %}
+<div>
+    <table>
+        <tr>
+            <th colspan="2">{{reviewPost.review_title}}</th>
+        </tr>
+        <tr>
+            <td>별점 : {{reviewPost.rating}}</td>
+            <td>{{reviewPost.upload_date}}</td>
+        </tr>
+        <tr>
+            <td colspan="2" id="movieTitle">{{reviewPost.movie}}</td>
+        </tr>
+        <!-- <tr> 
+            <td colspan="2" id="mainText">{{reviewPost.review_body | linebreaks }}</td>
+        </tr> -->
+        {% if reviewPost.image %}
+        <tr>
+            <td colspan="2"><img src="{{reviewPost.image.url}}" alt=""></td>
+        </tr>
+        {% endif %}
+    </table>
+    <a href="{%url 'photoreview/edit' reviewPost.id%}" class="white_box">edit</a>
+    <a href="{%url 'photoreview/delete' reviewPost.id%}" class="white_box">delete</a>
+</div>
+{% endblock %}

@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Photo Review</h1>
+
+<div>
+    {% for post in allPost %}
+    <table>
+        {% if post.image %}
+        <tr>
+            <td colspan="2"><img src="{{post.image.url}}" alt="" width="500px" max_height="500px"></td>
+        </tr>
+        {% endif %}
+        <tr>
+            <td colspan="2">{{post.review_title}} <a href="{% url 'photoreview/detail' post.id %}" ><br>더보기</a></td>
+        </tr>
+    </table>
+    {% endfor %}
+</div>
+<br>
+<br>
+
+{% endblock %}

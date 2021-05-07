@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h1>Write Your Movie Review</h1>
+
+<form action="{%url 'photoreview/create' %}" method="post" enctype="multipart/form-data">
+    {%csrf_token%}
+    <table>
+      {{form.as_table}}
+    </table>
+    <button type="submit"> submit </button>
+</form>
+
+{% endblock %}

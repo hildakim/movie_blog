@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block content %}
+<body>
+  <h1>Welcome</h1>
+
+  <ul class="welcome-list">
+    <li class="welcome-item"><a href="{% url 'home' %}">MOVIE BLOG</a></li>
+    <li class="welcome-item"><a href="{% url 'photoreview' %}">PHOTO REVIEW</a></li>
+  </ul>
+
+</body>
+{% endblock %}
