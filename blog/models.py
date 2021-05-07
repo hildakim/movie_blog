@@ -8,6 +8,7 @@ class Blog(models.Model):
     nickname = models.CharField(max_length=100)
     upload_date = models.DateTimeField()
     review_body = models.TextField()
+    image = models.ImageField(upload_to='blog/', null=True, blank=True)
 
     def __str__(self):
         return self.review_title 

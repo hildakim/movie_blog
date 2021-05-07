@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from .models import Blog
 from django.utils import timezone
+from .forms import BlogForm
 
 # Create your views here.
 def home(request):
@@ -12,17 +13,26 @@ def detail(request, id):
     return render(request, 'detail.html', {'reviewPost':reviewPost})
     
 def new(request):
-    return render(request, 'new.html')
+    form = BlogForm()
+    return render(request, 'new.html', {'form': form})
 
 def create(request):
-    new_review = Blog()
-    new_review.review_title = request.POST['review_title']
-    new_review.nickname = request.POST['review_writer']
-    new_review.movie = request.POST['movie']
-    new_review.review_body = request.POST['review_body']
-    new_review.upload_date = timezone.now()
-    new_review.save()
-    return redirect('detail', new_review.id)
+    form = BlogForm(request.POST, request.FILES)
+    if form.is_valid():
+        new_review = form.save(commit=False)
+        new_review.upload_date = timezone.now()
+        new_review.save()
+        return redirect('detail', new_review.id)
+    return redirect('home')
+    # new_review = Blog()
+    # new_review.review_title = request.POST['review_title']
+    # new_review.nickname = request.POST['review_writer']
+    # new_review.movie = request.POST['movie']
+    # new_review.review_body = request.POST['review_body']
+    # new_review.image = request.FILES['image']
+    # new_review.upload_date = timezone.now()
+    # new_review.save()
+    
 
 def edit(request, id):
     edit_review = Blog.objects.get(id = id)
